@@ -1,0 +1,156 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F2231AA-2837-4954-819C-7C0E764DFF0F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SaglikNetLib</RootNamespace>
+    <AssemblyName>SaglikNetLib</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Services3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mesajlar\BaseMesaj.cs" />
+    <Compile Include="Mesajlar\MuayeneMesaji.cs" />
+    <Compile Include="Mesajlar\msvs.cs" />
+    <Compile Include="MyPolicy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebReference_Muayene\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WSSEDraftPolicyAssertion.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebReference_Muayene\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_Muayene\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_Muayene\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_Muayene\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_Muayene\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_Muayene\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_Muayene\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WebReference_Muayene\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_Muayene\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_Muayene\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference_Muayene\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_Muayene\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_Muayene\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_Muayene\POCD_MT000005TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_Muayene\POCD_MT000205TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_Muayene\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_Muayene\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_Muayene\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_Muayene\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference_Muayene\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebReference_Muayene\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_Muayene\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="wse3policyCache.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="D:\Projects\sagliknetlib\docs\msvs_semalari\Muayene\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebReference_Muayene\</RelPath>
+      <UpdateFromURL>D:\Projects\sagliknetlib\docs\msvs_semalari\Muayene\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SaglikNetLib_WebReference_Muayene_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
