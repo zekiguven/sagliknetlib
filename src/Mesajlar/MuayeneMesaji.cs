@@ -47,13 +47,6 @@ namespace SaglikNetLib.Mesajlar
 
         }
 
-
-
-
-
-
-        #region IMesaj Members
-
         public void YeniKayit()
         {
             mesaj_yeni = new MCCI_IN000001TR01Message();
@@ -101,7 +94,7 @@ namespace SaglikNetLib.Mesajlar
             mesaj_yeni.controlActEvent.subject = new MCCI_IN000001TR01Subject();
             mesaj_yeni.controlActEvent.subject.examination = Dokuman;
 
-            #region Dokuman bilgilerini doldur
+            #region Dokuman bilgileri
 
             Dokuman.id = new POCD_MT000005TR01ExaminationID();
             Dokuman.id.root = "2.16.840.1.113883.3.129.2.1.3";
@@ -790,7 +783,171 @@ namespace SaglikNetLib.Mesajlar
 
             POCD_MT000005TR01ReceptionDataset ReceptionDataset = new POCD_MT000005TR01ReceptionDataset();
             Component38.receptionDataset = ReceptionDataset;
-            //ReceptionDatasetDoldur(ReceptionDataset);
+
+            ReceptionDataset.id = new POCD_MT000005TR01ReceptionDatasetID();
+            ReceptionDataset.id.root = "2.16.840.1.113883.3.129.2.1.4";
+            ReceptionDataset.id.extension = UUID;
+
+            ReceptionDataset.code = new POCD_MT000005TR01ReceptionDatasetCode();
+            ReceptionDataset.code.code = "KABUL";
+            ReceptionDataset.code.codeSystem = "2.16.840.1.113883.3.129.2.2.2";
+            ReceptionDataset.code.codeSystemName = "Veriseti";
+            ReceptionDataset.code.codeSystemVersion = "1.0";
+            ReceptionDataset.code.displayName = "Kabul Veriseti";
+
+            ReceptionDataset.text = new StrucDocText();
+            ReceptionDataset.text.Text = new string[] { "" };
+
+             
+            
+
+            #region component1
+
+            ReceptionDataset.component1 = new POCD_MT000005TR01Component39();
+            ReceptionDataset.component1.socialSecurityFollowNumberSection = new POCD_MT000005TR01SocialSecurityFollowNumberSection();
+
+            ReceptionDataset.component1.socialSecurityFollowNumberSection.id = new POCD_MT000005TR01SocialSecurityFollowNumberSectionID();
+            ReceptionDataset.component1.socialSecurityFollowNumberSection.id.root = "2.16.840.1.113883.3.129.2.1.5";
+            ReceptionDataset.component1.socialSecurityFollowNumberSection.id.extension = UUID;
+
+            ReceptionDataset.component1.socialSecurityFollowNumberSection.code = new POCD_MT000005TR01SocialSecurityFollowNumberSectionCode();
+            ReceptionDataset.component1.socialSecurityFollowNumberSection.code.code = "SGKTAKIPNO";
+            ReceptionDataset.component1.socialSecurityFollowNumberSection.code.codeSystem = "2.16.840.1.113883.3.129.2.2.3";
+            ReceptionDataset.component1.socialSecurityFollowNumberSection.code.codeSystemName = "Veri Kýsmý";
+            ReceptionDataset.component1.socialSecurityFollowNumberSection.code.codeSystemVersion = "1.0";
+            ReceptionDataset.component1.socialSecurityFollowNumberSection.code.displayName = "SGK Takip No Bilgisinin Olduðu Bölüm";
+
+            ReceptionDataset.component1.socialSecurityFollowNumberSection.text = new StrucDocText();
+            ReceptionDataset.component1.socialSecurityFollowNumberSection.text.Text = new string[] { HastaKabul.SGKTakipNumarasi };
+            
+            #endregion
+
+            #region component2
+
+            ReceptionDataset.component2 = new POCD_MT000005TR01Component40();
+            ReceptionDataset.component2.referralSection = new POCD_MT000005TR01ReferralSection();
+            
+            ReceptionDataset.component2.referralSection.id = new POCD_MT000005TR01ReferralSectionID();
+            ReceptionDataset.component2.referralSection.id.root="2.16.840.1.113883.3.129.2.1.5";
+            ReceptionDataset.component2.referralSection.id.extension=UUID;
+
+            ReceptionDataset.component2.referralSection.code = new POCD_MT000005TR01ReferralSectionCode();
+            ReceptionDataset.component2.referralSection.code.code="SEVK";
+            ReceptionDataset.component2.referralSection.code.codeSystem="2.16.840.1.113883.3.129.2.2.3";
+            ReceptionDataset.component2.referralSection.code.codeSystemName="Veri Kýsmý";
+            ReceptionDataset.component2.referralSection.code.codeSystemVersion="1.0";
+            ReceptionDataset.component2.referralSection.code.displayName="Sevk Verisinin Olduðu Bölüm";
+
+            ReceptionDataset.component2.referralSection.text = new StrucDocText();
+            ReceptionDataset.component2.referralSection.text.Text = new string[] { "" };
+
+            ReceptionDataset.component2.referralSection.component = new POCD_MT000005TR01Component41();
+            ReceptionDataset.component2.referralSection.component.referral = new POCD_MT000005TR01Referral();
+            ReceptionDataset.component2.referralSection.component.referral.effectiveTime = new POCD_MT000005TR01ReferralEffectiveTime();
+            ReceptionDataset.component2.referralSection.component.referral.effectiveTime.value = HastaKabul.SevkTarihi.ToString("yyyyMMdd");
+
+            ReceptionDataset.component2.referralSection.component.referral.referrer = new POCD_MT000005TR01Referrer();
+            ReceptionDataset.component2.referralSection.component.referral.referrer.referralFromClinic = new POCD_MT000005TR01ReferralFromClinic();
+            ReceptionDataset.component2.referralSection.component.referral.referrer.referralFromClinic.code = new POCD_MT000005TR01ReferralFromClinicCode();
+            ReceptionDataset.component2.referralSection.component.referral.referrer.referralFromClinic.code.code=HastaKabul.GeldigiPoliklinik.Code;
+            ReceptionDataset.component2.referralSection.component.referral.referrer.referralFromClinic.code.codeSystem="2.16.840.1.113883.3.129.1.2.1";
+            ReceptionDataset.component2.referralSection.component.referral.referrer.referralFromClinic.code.codeSystemName="Klinikler";
+            ReceptionDataset.component2.referralSection.component.referral.referrer.referralFromClinic.code.codeSystemVersion="1.0";
+            ReceptionDataset.component2.referralSection.component.referral.referrer.referralFromClinic.code.displayName=HastaKabul.GeldigiPoliklinik.DisplayName;
+
+            if (HastaKabul.SevkTanisi.Count > 0)
+            {
+                ReceptionDataset.component2.referralSection.component.referral.component = new POCD_MT000005TR01Component42[HastaKabul.SevkTanisi.Count];
+
+                for (int i = 0; i < HastaKabul.SevkTanisi.Count; i++)
+                {
+                    ReceptionDataset.component2.referralSection.component.referral.component[i] = new POCD_MT000005TR01Component42();
+                    ReceptionDataset.component2.referralSection.component.referral.component[i].referralDiagnosis = new POCD_MT000005TR01ReferralDiagnosis();
+                    ReceptionDataset.component2.referralSection.component.referral.component[i].referralDiagnosis.code = new POCD_MT000005TR01ReferralDiagnosisCode();
+                    ReceptionDataset.component2.referralSection.component.referral.component[i].referralDiagnosis.code.code = "SEVKTANISI";
+                    ReceptionDataset.component2.referralSection.component.referral.component[i].referralDiagnosis.code.codeSystem = "2.16.840.1.113883.3.129.2.2.6";
+                    ReceptionDataset.component2.referralSection.component.referral.component[i].referralDiagnosis.code.codeSystemName = "Taný Tipi";
+                    ReceptionDataset.component2.referralSection.component.referral.component[i].referralDiagnosis.code.codeSystemVersion = "1.0";
+                    ReceptionDataset.component2.referralSection.component.referral.component[i].referralDiagnosis.code.displayName = "Sevk Tanýsý";
+
+                    ReceptionDataset.component2.referralSection.component.referral.component[i].referralDiagnosis.value = new POCD_MT000005TR01ReferralDiagnosisValue();
+                    ReceptionDataset.component2.referralSection.component.referral.component[i].referralDiagnosis.value.code = HastaKabul.SevkTanisi[i].Code;
+                    ReceptionDataset.component2.referralSection.component.referral.component[i].referralDiagnosis.value.codeSystem = "2.16.840.1.113883.6.3";
+                    ReceptionDataset.component2.referralSection.component.referral.component[i].referralDiagnosis.value.codeSystemName = "ICD-10";
+                    ReceptionDataset.component2.referralSection.component.referral.component[i].referralDiagnosis.value.codeSystemVersion = "1.0";
+                    ReceptionDataset.component2.referralSection.component.referral.component[i].referralDiagnosis.value.displayName = HastaKabul.SevkTanisi[i].DisplayName;
+                }
+
+            }
+                           
+
+            #endregion
+
+            #region component3
+
+
+            ReceptionDataset.component3 = new POCD_MT000005TR01Component43();
+            ReceptionDataset.component3.registrationSection = new POCD_MT000005TR01RegistrationSection();
+            ReceptionDataset.component3.registrationSection.id = new POCD_MT000005TR01RegistrationSectionID();
+            ReceptionDataset.component3.registrationSection.id.root= "2.16.840.1.113883.3.129.2.1.5";
+            ReceptionDataset.component3.registrationSection.id.extension=UUID;
+            
+            ReceptionDataset.component3.registrationSection.code = new POCD_MT000005TR01RegistrationSectionCode();
+            ReceptionDataset.component3.registrationSection.code.code = "KABUL";
+            ReceptionDataset.component3.registrationSection.code.codeSystem = "2.16.840.1.113883.3.129.2.2.3";
+            ReceptionDataset.component3.registrationSection.code.codeSystemName = "Veri Kýsmý";
+            ReceptionDataset.component3.registrationSection.code.codeSystemVersion = "1.0";
+            ReceptionDataset.component3.registrationSection.code.displayName = "Kabul Verisinin Olduðu Bölüm";
+
+            ReceptionDataset.component3.registrationSection.text = new StrucDocText();
+            ReceptionDataset.component3.registrationSection.text.Text = new string[] { "" };
+
+            ReceptionDataset.component3.registrationSection.component = new POCD_MT000005TR01Component44();
+            ReceptionDataset.component3.registrationSection.component.registration = new POCD_MT000005TR01Registration();
+            ReceptionDataset.component3.registrationSection.component.registration.code = new POCD_MT000005TR01RegistrationCode();
+            ReceptionDataset.component3.registrationSection.component.registration.code.code = HastaKabul.KabulSekli.Code;
+            ReceptionDataset.component3.registrationSection.component.registration.code.codeSystem = "2.16.840.1.113883.3.129.1.2.7";
+            ReceptionDataset.component3.registrationSection.component.registration.code.codeSystemName = "Kabul Þekli";
+            ReceptionDataset.component3.registrationSection.component.registration.code.codeSystemVersion = "1.0";
+            ReceptionDataset.component3.registrationSection.component.registration.code.displayName = HastaKabul.KabulSekli.DisplayName;
+
+            ReceptionDataset.component3.registrationSection.component.registration.effectiveTime = new POCD_MT000005TR01RegistrationEffectiveTime();
+            ReceptionDataset.component3.registrationSection.component.registration.effectiveTime.value = HastaKabul.KabulZamani.ToString("yyyyMMddhhmm");
+
+            #endregion
+
+            #region component4
+
+            ReceptionDataset.component4 = new POCD_MT000005TR01Component45();
+            ReceptionDataset.component4.caseTypeSection = new POCD_MT000005TR01CaseTypeSection();
+            ReceptionDataset.component4.caseTypeSection.id = new POCD_MT000005TR01CaseTypeSectionID();
+            ReceptionDataset.component4.caseTypeSection.id.root = "2.16.840.1.113883.3.129.2.1.5";
+            ReceptionDataset.component4.caseTypeSection.id.extension = UUID;
+
+            ReceptionDataset.component4.caseTypeSection.code = new POCD_MT000005TR01CaseTypeSectionCode();
+            ReceptionDataset.component4.caseTypeSection.code.code = "VAKATURU";
+            ReceptionDataset.component4.caseTypeSection.code.codeSystem = "2.16.840.1.113883.3.129.2.2.3";
+            ReceptionDataset.component4.caseTypeSection.code.codeSystemName = "Veri Kýsmý";
+            ReceptionDataset.component4.caseTypeSection.code.codeSystemVersion = "1.0";
+            ReceptionDataset.component4.caseTypeSection.code.displayName = "Vaka Türü Bilgisinin Olduðu Bölüm";
+
+            ReceptionDataset.component4.caseTypeSection.text = new StrucDocText();
+            ReceptionDataset.component4.caseTypeSection.text.Text = new string[] { "" };
+
+            ReceptionDataset.component4.caseTypeSection.component  = new POCD_MT000005TR01Component46();
+            ReceptionDataset.component4.caseTypeSection.component.caseType = new POCD_MT000005TR01CaseType();
+            ReceptionDataset.component4.caseTypeSection.component.caseType.code = new POCD_MT000005TR01CaseTypeCode();
+            ReceptionDataset.component4.caseTypeSection.component.caseType.code.code = HastaKabul.VakaTuru.Code;
+            ReceptionDataset.component4.caseTypeSection.component.caseType.code.codeSystem = "2.16.840.1.113883.3.129.1.2.53";
+            ReceptionDataset.component4.caseTypeSection.component.caseType.code.codeSystemName = "Vaka Türü";
+            ReceptionDataset.component4.caseTypeSection.component.caseType.code.codeSystemVersion = "1.0";
+            ReceptionDataset.component4.caseTypeSection.component.caseType.code.displayName = HastaKabul.VakaTuru.DisplayName;
+            
+            #endregion
+
+
+
+            
 
             #endregion
 
@@ -802,7 +959,235 @@ namespace SaglikNetLib.Mesajlar
             if (Recete.Count > 0)
             {
                 Component7 = new POCD_MT000005TR01Component7[Recete.Count];
-                //PrescriptionDatasetDoldur(Component7);
+                for (int i = 0; i < Recete.Count; i++)
+                {
+                    Component7[i] = new POCD_MT000005TR01Component7();
+                    Component7[i].prescriptionDataset = new POCD_MT000005TR01PrescriptionDataset();
+
+                    Component7[i].prescriptionDataset.id = new POCD_MT000005TR01PrescriptionDatasetID();
+                    Component7[i].prescriptionDataset.id.root = "2.16.840.1.113883.3.129.2.1.4";
+                    Component7[i].prescriptionDataset.id.extension = UUID;
+
+                    Component7[i].prescriptionDataset.code = new POCD_MT000005TR01PrescriptionDatasetCode();
+                    Component7[i].prescriptionDataset.code.code = "RECETE";
+                    Component7[i].prescriptionDataset.code.codeSystem = "2.16.840.1.113883.3.129.2.2.2";
+                    Component7[i].prescriptionDataset.code.codeSystemName = "Veriseti";
+                    Component7[i].prescriptionDataset.code.codeSystemVersion = "1.0";
+                    Component7[i].prescriptionDataset.code.displayName = "Reçete Veriseti";
+
+                    Component7[i].prescriptionDataset.text = new StrucDocText();
+                    Component7[i].prescriptionDataset.text.Text = new string[] { "" };
+
+                    Component7[i].prescriptionDataset.author = new POCD_MT000005TR01Author2();
+                    Component7[i].prescriptionDataset.author.assignedDoctor = new POCD_MT000005TR01AssignedDoctor();
+                    Component7[i].prescriptionDataset.author.assignedDoctor.id = new POCD_MT000005TR01AssignedDoctorID[2];
+                    Component7[i].prescriptionDataset.author.assignedDoctor.id[0] = new POCD_MT000005TR01AssignedDoctorID();
+                    Component7[i].prescriptionDataset.author.assignedDoctor.id[0].root = "2.16.840.1.113883.3.129.1.1.1";
+                    Component7[i].prescriptionDataset.author.assignedDoctor.id[0].extension = Recete[i].HekimKimlikNumarasi;
+
+                    Component7[i].prescriptionDataset.author.assignedDoctor.id[1] = new POCD_MT000005TR01AssignedDoctorID();
+                    Component7[i].prescriptionDataset.author.assignedDoctor.id[1].root = "2.16.840.1.113883.3.129.1.1.2";
+                    Component7[i].prescriptionDataset.author.assignedDoctor.id[1].extension = Recete[i].DiplomaTescilNumarasi;
+
+                    #region component1 - Ýlaç bilgisinin olduðu bölüm
+                    Component7[i].prescriptionDataset.component1 = new POCD_MT000005TR01Component11();
+                    Component7[i].prescriptionDataset.component1.medicationSection = new POCD_MT000005TR01MedicationSection();
+                    Component7[i].prescriptionDataset.component1.medicationSection.id = new POCD_MT000005TR01MedicationSectionID();
+                    Component7[i].prescriptionDataset.component1.medicationSection.id.root = "2.16.840.1.113883.3.129.2.1.5";
+                    Component7[i].prescriptionDataset.component1.medicationSection.id.extension = UUID;
+
+                    Component7[i].prescriptionDataset.component1.medicationSection.code = new POCD_MT000005TR01MedicationSectionCode();
+                    Component7[i].prescriptionDataset.component1.medicationSection.code.code = "ILAC";
+                    Component7[i].prescriptionDataset.component1.medicationSection.code.codeSystem = "2.16.840.1.113883.3.129.2.2.3";
+                    Component7[i].prescriptionDataset.component1.medicationSection.code.codeSystemName = "Veri Kýsmý";
+                    Component7[i].prescriptionDataset.component1.medicationSection.code.codeSystemVersion = "1.0";
+                    Component7[i].prescriptionDataset.component1.medicationSection.code.displayName = "Ýlaç Verisinin Olduðu Bölüm";
+
+                    Component7[i].prescriptionDataset.component1.medicationSection.text = new StrucDocText();
+                    Component7[i].prescriptionDataset.component1.medicationSection.text.Text = new string[] { "" };
+
+                    
+                    Component7[i].prescriptionDataset.component1.medicationSection.component = new POCD_MT000005TR01Component12[Recete[i].Ilac.Count];
+                    for (int j = 0; j < Recete[i].Ilac.Count; j++)
+                    {
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j] = new POCD_MT000005TR01Component12();
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration = new POCD_MT000005TR01SubstanceAdministration();
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.effectiveTime = new POCD_MT000005TR01SubstanceAdministrationEffectiveTime();
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.effectiveTime.period = new PQ();
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.effectiveTime.period.value = Recete[i].Ilac[j].KullanimPeriyodu;
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.effectiveTime.period.unit = Recete[i].Ilac[j].KullanimPeriyoduBirimi;
+                        
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.routeCode = new POCD_MT000005TR01SubstanceAdministrationRouteCode();
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.routeCode.code = Recete[i].Ilac[j].KullanimSekli.Code;
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.routeCode.codeSystem = "2.16.840.1.113883.3.129.1.2.47";
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.routeCode.codeSystemName = "Ýlaç Kullaným Þekli";
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.routeCode.codeSystemVersion = "1.0";
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.routeCode.displayName = Recete[i].Ilac[j].KullanimSekli.DisplayName;
+
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.doseQuantity = new REAL();
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.doseQuantity.value = Recete[i].Ilac[j].KullanimAdedi;
+
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.consumable = new POCD_MT000005TR01Consumable();
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.consumable.manufacturedProduct = new POCD_MT000005TR01ManufacturedProduct();
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.consumable.manufacturedProduct.manufacturedMaterial = new POCD_MT000005TR01ManufacturedMaterial();
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.consumable.manufacturedProduct.manufacturedMaterial.code = new POCD_MT000005TR01ManufacturedMaterialCode();
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.consumable.manufacturedProduct.manufacturedMaterial.code.code = Recete[i].Ilac[j].Ilac.Code;
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.consumable.manufacturedProduct.manufacturedMaterial.code.codeSystem = "2.16.840.1.113883.3.129.1.2.3";
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.consumable.manufacturedProduct.manufacturedMaterial.code.codeSystemName = "Ýlaçlar";
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.consumable.manufacturedProduct.manufacturedMaterial.code.codeSystemVersion = "1.0";
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.consumable.manufacturedProduct.manufacturedMaterial.code.displayName = Recete[i].Ilac[j].Ilac.DisplayName;
+                        
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.component = new POCD_MT000005TR01Component13();
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.component.supply = new POCD_MT000005TR01Supply();
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.component.supply.quantity = new INT();
+                        Component7[i].prescriptionDataset.component1.medicationSection.component[j].substanceAdministration.component.supply.quantity.value = Recete[i].Ilac[j].Adedi;
+
+
+                        
+                    }
+
+                    
+
+                    #endregion
+
+                    #region component2 - Reçete Türü, Protokol No, SGK Karne No
+                    Component7[i].prescriptionDataset.component2 = new POCD_MT000005TR01Component14();
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection = new POCD_MT000005TR01PrescriptionHeaderSection();
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.id = new POCD_MT000005TR01PrescriptionHeaderSectionID();
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.id.root = "2.16.840.1.113883.3.129.2.1.5";
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.id.extension = UUID;
+
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.code = new POCD_MT000005TR01PrescriptionHeaderSectionCode();
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.code.code = "RECETEBASLIK";
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.code.codeSystem = "2.16.840.1.113883.3.129.2.2.3";
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.code.codeSystemName = "Veri Kýsmý";
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.code.codeSystemVersion = "1.0";
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.code.displayName = "Reçete Baþlýk Bilgisinin Olduðu Bölüm";
+
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.text = new StrucDocText();
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.text.Text = new string[] { "" };
+                    
+                    // Reçete Türü
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component = new POCD_MT000005TR01Component15();
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader = new POCD_MT000005TR01PrescriptionHeader();
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader.code = new POCD_MT000005TR01PrescriptionHeaderCode();
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader.code.code = Recete[i].ReceteTuru.Code;
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader.code.codeSystem = "2.16.840.1.113883.3.129.1.2.48";
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader.code.codeSystemName = "Reçete Türü";
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader.code.codeSystemVersion = "1.0";
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader.code.displayName = Recete[i].ReceteTuru.DisplayName;
+
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader.effectiveTime = new POCD_MT000005TR01PrescriptionHeaderEffectiveTime();
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader.effectiveTime.value = Recete[i].ReceteTarihi.ToString("yyyyMMdd");
+
+                    // Protokol No
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader.component1 = new POCD_MT000005TR01Component16();
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader.component1.protocolNo = new POCD_MT000005TR01ProtocolNo();
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader.component1.protocolNo.id = new POCD_MT000005TR01ProtocolNoID();
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader.component1.protocolNo.id.root = "2.16.840.1.113883.3.129.1.1.4";
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader.component1.protocolNo.id.extension = Recete[i].ProtokolNumarasi;
+                    
+                    // SGK Karne No
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader.component2 = new POCD_MT000005TR01Component17();
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader.component2.sGKRationBook = new POCD_MT000005TR01SGKRationBook();
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader.component2.sGKRationBook.id = new POCD_MT000005TR01SGKRationBookID();
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader.component2.sGKRationBook.id.root = "2.16.840.1.113883.3.129.1.1.3";
+                    Component7[i].prescriptionDataset.component2.prescriptionHeaderSection.component.prescriptionHeader.component2.sGKRationBook.id.extension = Recete[i].SGKKarneNumarasi;
+                                        
+                    #endregion
+
+                    #region component3 - Sosyal güvence durumu bölümünü belirtir
+
+
+                    Component7[i].prescriptionDataset.component3 = new POCD_MT000005TR01Component8();
+                    Component7[i].prescriptionDataset.component3.guarantorSection = new POCD_MT000005TR01GuarantorSection();
+                    Component7[i].prescriptionDataset.component3.guarantorSection.id = new POCD_MT000005TR01GuarantorSectionID();
+                    Component7[i].prescriptionDataset.component3.guarantorSection.id.root = "2.16.840.1.113883.3.129.2.1.5";
+                    Component7[i].prescriptionDataset.component3.guarantorSection.id.extension = UUID;
+
+                    Component7[i].prescriptionDataset.component3.guarantorSection.code = new POCD_MT000005TR01GuarantorSectionCode();
+                    Component7[i].prescriptionDataset.component3.guarantorSection.code.code = "SOSYALGUVENCEDURUMU";
+                    Component7[i].prescriptionDataset.component3.guarantorSection.code.codeSystem = "2.16.840.1.113883.3.129.2.2.3";
+                    Component7[i].prescriptionDataset.component3.guarantorSection.code.codeSystemName = "Veri Kýsmý";
+                    Component7[i].prescriptionDataset.component3.guarantorSection.code.codeSystemVersion = "1.0";
+                    Component7[i].prescriptionDataset.component3.guarantorSection.code.displayName = "Sosyal Güvence Durumu Bilgilerinin Olduðu Bölüm";
+
+                    Component7[i].prescriptionDataset.component3.guarantorSection.component = new POCD_MT000005TR01Component47();
+                    Component7[i].prescriptionDataset.component3.guarantorSection.component.guarantor = new POCD_MT000005TR01Guarantor();
+                    Component7[i].prescriptionDataset.component3.guarantorSection.component.guarantor.code = new POCD_MT000005TR01GuarantorCode();
+                    Component7[i].prescriptionDataset.component3.guarantorSection.component.guarantor.code.code = Recete[i].SosyalGuvenceDurumu.Code;
+                    Component7[i].prescriptionDataset.component3.guarantorSection.component.guarantor.code.codeSystem = "2.16.840.1.113883.3.129.1.2.11";
+                    Component7[i].prescriptionDataset.component3.guarantorSection.component.guarantor.code.codeSystemName = "Sosyal Güvenlik";
+                    Component7[i].prescriptionDataset.component3.guarantorSection.component.guarantor.code.codeSystemVersion = "1.0";
+                    Component7[i].prescriptionDataset.component3.guarantorSection.component.guarantor.code.displayName = Recete[i].SosyalGuvenceDurumu.DisplayName;
+
+                    #endregion
+
+                    #region component4 - Taný bilgisi
+                    Component7[i].prescriptionDataset.component4 = new POCD_MT000005TR01Component9();
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection = new POCD_MT000005TR01PresDiagnosisSection();
+
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.id = new POCD_MT000005TR01PresDiagnosisSectionID();
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.id.root = "2.16.840.1.113883.3.129.2.1.5";
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.id.extension = UUID;
+
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.code = new POCD_MT000005TR01PresDiagnosisSectionCode();
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.code.code = "TANI";
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.code.codeSystem = "2.16.840.1.113883.3.129.2.2.3";
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.code.codeSystemName = "Veri Kýsmý";
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.code.codeSystemVersion = "1.0";
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.code.displayName = "Taný Verisinin Olduðu Bölüm";
+
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.text = new StrucDocText();
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.text.Text = new string[] { "" };
+
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.component = new POCD_MT000005TR01Component10[Recete[i].EkTani.Count + 1];
+
+                    // Anataný
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[0] = new POCD_MT000005TR01Component10();
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[0].presDiagnosis = new POCD_MT000005TR01PresDiagnosis();
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[0].presDiagnosis.code = new POCD_MT000005TR01PresDiagnosisCode();
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[0].presDiagnosis.code.code = "ANATANI";
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[0].presDiagnosis.code.codeSystem = "2.16.840.1.113883.3.129.2.2.6";
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[0].presDiagnosis.code.codeSystemName = "Taný Tipi";
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[0].presDiagnosis.code.codeSystemVersion = "1.0";
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[0].presDiagnosis.code.displayName = "Ana Taný";
+
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[0].presDiagnosis.value = new POCD_MT000005TR01PresDiagnosisValue();
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[0].presDiagnosis.value.code = Recete[i].AnaTani.Code;
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[0].presDiagnosis.value.codeSystem = "2.16.840.1.113883.6.3";
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[0].presDiagnosis.value.codeSystemName = "ICD-10";
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[0].presDiagnosis.value.codeSystemVersion = "1.0";
+                    Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[0].presDiagnosis.value.displayName = Recete[i].AnaTani.DisplayName;
+
+
+                    if (Recete[i].EkTani.Count > 0)
+                    {
+                        for (int j = 1; j < Recete[i].EkTani.Count; j++)
+                        {
+                            Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[j] = new POCD_MT000005TR01Component10();
+                            Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[j].presDiagnosis = new POCD_MT000005TR01PresDiagnosis();
+                            Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[j].presDiagnosis.code = new POCD_MT000005TR01PresDiagnosisCode();
+                            Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[j].presDiagnosis.code.code = "EKTANI";
+                            Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[j].presDiagnosis.code.codeSystem = "2.16.840.1.113883.3.129.2.2.6";
+                            Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[j].presDiagnosis.code.codeSystemName = "Taný Tipi";
+                            Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[j].presDiagnosis.code.codeSystemVersion = "1.0";
+                            Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[j].presDiagnosis.code.displayName = "Ek Taný";
+
+                            Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[j].presDiagnosis.value = new POCD_MT000005TR01PresDiagnosisValue();
+                            Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[j].presDiagnosis.value.code = Recete[i].EkTani[j].Code;
+                            Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[j].presDiagnosis.value.codeSystem = "2.16.840.1.113883.6.3";
+                            Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[j].presDiagnosis.value.codeSystemName = "ICD-10";
+                            Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[j].presDiagnosis.value.codeSystemVersion = "1.0";
+                            Component7[i].prescriptionDataset.component4.presDiagnosisSection.component[j].presDiagnosis.value.displayName = Recete[i].EkTani[j].DisplayName;
+
+                        }
+                    }
+
+                    #endregion
+
+                }
+
             }
 
             #endregion
@@ -966,7 +1351,6 @@ namespace SaglikNetLib.Mesajlar
             return sr.ReadToEnd();
 
         }
-
-        #endregion
+        
     }
 }
