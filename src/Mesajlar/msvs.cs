@@ -39,7 +39,7 @@ namespace SaglikNetLib
         public VatandasYabanciHastaKayitMSVS()
         {
             Cinsiyet=new CodeDisplayName();
-            Uyruk = new CodeDisplayName();
+            Uyruk = new CodeDisplayName("TR","Türkiye");
         }
 
     }
