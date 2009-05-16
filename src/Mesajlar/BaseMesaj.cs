@@ -35,13 +35,13 @@ namespace SaglikNetLib
         public string ServiceUsername;
         public string ServicePassword;
         public string ServiceSertifikaYol;
-
-        public string MesajGonderenYazilim;
+        
         public string DokumanGUID;
         public string DokumanYazariTCKimlikNo;
         public string DokumaniOlusturanKurum;
         public bool DokumanTekGUIDKullan;
         public DateTime DokumanIslemZamani;
+        public string MesajGonderenYazilim;
         public MesajTuru SonMesajTuru;
         public HastaTuru HastaTuru;
 

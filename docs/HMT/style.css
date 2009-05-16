@@ -1,0 +1,132 @@
+/**
+Bu Stylesheet dosyası Vestel-Birim-Datasel ortaklığı tarafından Sağlık-Net HMT dosyalarında kullanılmak üzere hazırlanmıştır.
+*/
+
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-color:#FFFFFF;
+	margin:7px;
+}
+
+
+a{
+ color:#333333;
+ text-decoration:underline;
+}
+
+a:hover{
+ color:#333333;
+ text-decoration:underline;
+}
+
+#ds {
+	position: absolute;
+	visibility: hidden;
+	z-index: 100;
+	top: 10px;
+	left: 10px;
+}
+
+#cwe {
+	position: absolute;
+	visibility: hidden;
+	z-index: 100;
+	top: 10px;
+	left: 10px;
+}
+
+#cne {
+	position: absolute;
+	visibility: hidden;
+	z-index: 100;
+	top: 10px;
+	left: 10px;
+}
+
+.hypertext {
+	position: absolute;
+	background-color: white;
+	layer-background-colour: cornflowerblue;
+	padding: 3px;
+	border: 3px solid blue;
+	width: 150px;
+	font:normal 10pt/13pt helvetica, sans-serif;
+	text-align: left;
+	color: blue;
+}
+
+.pageHeading{
+	font-weight: bold;
+	font-size: +1;
+}
+
+.typeTitle{
+	background-color:lightblue;
+	font-weight: bold;
+}
+
+.element{
+	background-color:lightgrey;
+	font-weight: bold;
+}
+
+.cardinality{
+	color:green;
+}
+
+.conformanceM{
+}
+
+.typeBreak{
+	font-size=4pt;
+	height:3px;
+	background-color:#000000;
+}
+
+.tableHeader {
+	color: #000000;
+	background-color:lightblue;
+	font-weight: bold;
+}
+
+.tableEvenRow {
+	color:#000000;
+	background-color:#CCCCCC;
+}
+
+.tableOddRow {
+}
+
+.highlightAnchor{
+	background-color:#494949;
+	color:#FFFFFF;
+	font-weight:bold;
+}
+
+.HMT table{
+	empty-cells: show;
+	border:#000000 solid 1px;
+}
+
+
+.HMT td{
+	font-family: verdana, arial;
+	text-align: left;
+	font-size: 8pt;
+	border:#000000 solid 1px;
+}
+
+.header {
+	font-size:24px;
+	font-weight:bold;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	vertical-align:top;
+}
+
+.pageTitle{
+	font-size: 20px;
+	font-weight:bold;
+	vertical-align:top;
+}
