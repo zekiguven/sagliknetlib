@@ -1,12 +1,12 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
 using System.Xml.Serialization;
-using SaglikNetLib.WebReference_Muayene;
+using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.Web.Services3.Security.Tokens;
+using SaglikNetLib.WebReference_Muayene;
 
 
 namespace SaglikNetLib.Mesajlar

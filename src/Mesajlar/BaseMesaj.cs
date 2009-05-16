@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SaglikNetLib
 {
@@ -47,15 +45,7 @@ namespace SaglikNetLib
         public MesajTuru SonMesajTuru;
         public HastaTuru HastaTuru;
 
-        /*
-        public VatandasYabanciHastaKayitMSVS VatandasYabanciKayit;
-        public YenidoganKayitMSVS YenidoganKayit;
-        public List<TetkikSonucuMSVS> TetkikSonuclari;
-        public HastaKabulMSVS HastaKabul;
-        public HastaCikisMSVS HastaCikis;
-        public List<ReceteMSVS> Recete;
-        public MuayeneMSVS Muayene;
-        */
+
         public BaseMesaj()
         {
             MesajGonderenYazilim = "SAGLIKNETLIB";
