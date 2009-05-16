@@ -19,6 +19,12 @@ namespace SaglikNetLib
             Code = "";
             DisplayName = "";
         }
+
+        public CodeDisplayName(string _Code,string _DisplayName)
+        {
+            Code = _Code;
+            DisplayName = _DisplayName;
+        }
     }
 
     public class VatandasYabanciHastaKayitMSVS
