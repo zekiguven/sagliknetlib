@@ -40,6 +40,7 @@
     <Compile Include="Mesajlar\BaseMesaj.cs" />
     <Compile Include="Mesajlar\MuayeneMesaji.cs" />
     <Compile Include="Mesajlar\msvs.cs" />
+    <Compile Include="Mesajlar\VatandasYabanciHastaKayit.cs" />
     <Compile Include="MyPolicy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -48,6 +49,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Web References\WebReference_Muayene\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebReference_VatandasYabanciHastaKayit\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -125,6 +131,56 @@
     <None Include="Web References\WebReference_Muayene\voc.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Web References\WebReference_VatandasYabanciHastaKayit\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_VatandasYabanciHastaKayit\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_VatandasYabanciHastaKayit\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_VatandasYabanciHastaKayit\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WebReference_VatandasYabanciHastaKayit\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_VatandasYabanciHastaKayit\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_VatandasYabanciHastaKayit\MCCI_IN000002TR01Message.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference_VatandasYabanciHastaKayit\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_VatandasYabanciHastaKayit\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_VatandasYabanciHastaKayit\POCD_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_VatandasYabanciHastaKayit\POCD_MT000201TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_VatandasYabanciHastaKayit\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_VatandasYabanciHastaKayit\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_VatandasYabanciHastaKayit\QUQI_IN000002TR01Message.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference_VatandasYabanciHastaKayit\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebReference_VatandasYabanciHastaKayit\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference_VatandasYabanciHastaKayit\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="wse3policyCache.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -133,6 +189,17 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="D:\Projects\sagliknetlib\docs\MSVS\Vatandaş,Yabancı Hasta Kayıt\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebReference_VatandasYabanciHastaKayit\</RelPath>
+      <UpdateFromURL>D:\Projects\sagliknetlib\docs\MSVS\Vatandaş,Yabancı Hasta Kayıt\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SaglikNetLib_WebReference_VatandasYabanciHastaKayit_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="D:\Projects\sagliknetlib\docs\msvs_semalari\Muayene\MCCI_AR000001TR01.wsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\WebReference_Muayene\</RelPath>
