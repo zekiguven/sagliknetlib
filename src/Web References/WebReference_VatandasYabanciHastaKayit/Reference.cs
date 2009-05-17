@@ -2429,6 +2429,7 @@ namespace SaglikNetLib.WebReference_VatandasYabanciHastaKayit {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(TypeName="QUQI_IN000002TR01.Message", Namespace="urn:hl7-org:v3")]
+    [System.Xml.Serialization.XmlRootAttribute("QUQI_IN000002TR01",  Namespace  = "urn:hl7-org:v3", IsNullable = false)] 
     public partial class QUQI_IN000002TR01Message {
         
         private CS[] realmCodeField;
@@ -3407,6 +3408,7 @@ namespace SaglikNetLib.WebReference_VatandasYabanciHastaKayit {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(TypeName="QUQI_IN000001TR01.Message", Namespace="urn:hl7-org:v3")]
+    [System.Xml.Serialization.XmlRootAttribute("QUQI_IN000001TR01",  Namespace  = "urn:hl7-org:v3", IsNullable = false)] 
     public partial class QUQI_IN000001TR01Message {
         
         private CS[] realmCodeField;
@@ -8684,6 +8686,7 @@ namespace SaglikNetLib.WebReference_VatandasYabanciHastaKayit {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(TypeName="MCCI_IN000002TR01.Message", Namespace="urn:hl7-org:v3")]
+    [System.Xml.Serialization.XmlRootAttribute("MCCI_IN000002TR01",  Namespace  = "urn:hl7-org:v3", IsNullable = false)] 
     public partial class MCCI_IN000002TR01Message {
         
         private CS[] realmCodeField;
