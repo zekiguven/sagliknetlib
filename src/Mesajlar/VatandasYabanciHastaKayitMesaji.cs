@@ -10,7 +10,7 @@ using SaglikNetLib.WebReference_VatandasYabanciHastaKayit;
 
 namespace SaglikNetLib.Mesajlar
 {
-    class VatandasYabanciHastaKayit : BaseMesaj,IMesaj
+    public class VatandasYabanciHastaKayitMesaji : BaseMesaj,IMesaj
     {
         MCCI_AR000001TR_ServiceWse ws;
         MCCI_IN000001TR01Message mesaj_yeni;
@@ -19,9 +19,9 @@ namespace SaglikNetLib.Mesajlar
         QUQI_IN000001TR01Message mesaj_sorgu;
         QUQI_IN000002TR01Message mesaj_sorgu_cevap;
 
-        VatandasYabanciHastaKayitMSVS VatandasYabanciKayit;
+        public VatandasYabanciHastaKayitMSVS VatandasYabanciKayit;
 
-        public VatandasYabanciHastaKayit()
+        public VatandasYabanciHastaKayitMesaji()
         {
             VatandasYabanciKayit = new VatandasYabanciHastaKayitMSVS();
         }
@@ -123,6 +123,7 @@ namespace SaglikNetLib.Mesajlar
             Dokuman.primaryInformationRecipient = new POCD_MT000001TR01PrimaryInformationRecipient();
             Dokuman.primaryInformationRecipient.recipient = new POCD_MT000001TR01Recipient();
             Dokuman.primaryInformationRecipient.recipient.representedMinisteryOfHealth = new POCD_MT000001TR01MinisteryOfHealth();
+            Dokuman.primaryInformationRecipient.recipient.representedMinisteryOfHealth.id = new POCD_MT000001TR01MinisteryOfHealthID();
             Dokuman.primaryInformationRecipient.recipient.representedMinisteryOfHealth.id.root = "2.16.840.1.113883.3.129.1.1.6";
             Dokuman.primaryInformationRecipient.recipient.representedMinisteryOfHealth.id.extension = "5881";
 
@@ -203,16 +204,146 @@ namespace SaglikNetLib.Mesajlar
         {
         }
         
-        public void Gonder()
+public void Gonder()
         {
+            UsernameToken token = new UsernameToken(ServiceUsername, ServicePassword, PasswordOption.SendPlainText);
+           
+            ws = new MCCI_AR000001TR_ServiceWse();
+            ws.Url = ServiceURL;
+            ws.RequestSoapContext.Security.Tokens.Add(token);
+            ws.RequestSoapContext.Security.MustUnderstand = false;
+
+            //if ((ServiceSertifikaKullan) && (ServiceSertifikaYol.Length > 0))
+            {
+                X509Certificate X509 = new X509Certificate(ServiceSertifikaYol);
+                ws.ClientCertificates.Add(X509);
+                ServicePointManager.CertificatePolicy = new MyPolicy();
+            }
+
+            string acknowledgementcode = null;
+
+            switch (SonMesajTuru)
+            {
+
+                case MesajTuru.Yok:
+                    break;
+
+                case MesajTuru.Yenikayit:
+                    mesaj_cevap = ws.MCCI_AR000001TR_MCCI_IN000001TR(mesaj_yeni);
+                    acknowledgementcode = mesaj_cevap.acknowledgement.typeCode.code;
+                    break;
+
+                case MesajTuru.Guncelle:
+                    mesaj_cevap = ws.MCCI_AR000001TR_MCCI_IN000003TR(mesaj_guncelle);
+                    acknowledgementcode = mesaj_cevap.acknowledgement.typeCode.code;
+                    break;
+                case MesajTuru.Iptal:
+
+                    break;
+                case MesajTuru.Sorgulama:
+                    mesaj_sorgu_cevap = ws.MCCI_AR000001TR_QUQI_IN000001TR(mesaj_sorgu);
+                    acknowledgementcode = mesaj_sorgu_cevap.acknowledgement.typeCode.code;
+                    break;
+                default:
+                    break;
+            }
+
+            //return acknowledgementcode;
+
         }
-        
-        public void XMLKaydet(string DosyaAdi){
+
+        public void XMLKaydet(string DosyaAdi)
+        {
+            XmlSerializer serializer;
+            FileStream fs;
+            TextWriter writer;
+
+            switch (SonMesajTuru)
+            {
+                case MesajTuru.Yok:
+                    break;
+
+                case MesajTuru.Yenikayit:
+                    serializer = new XmlSerializer(typeof(MCCI_IN000001TR01Message));
+                    fs = new FileStream(DosyaAdi, FileMode.OpenOrCreate);
+                    writer = new StreamWriter(fs, Encoding.UTF8);
+                    serializer.Serialize(writer, mesaj_yeni);
+                    fs.Flush();
+                    fs.Close();
+                    break;
+
+                case MesajTuru.Guncelle:
+                    serializer = new XmlSerializer(typeof(MCCI_IN000003TR01Message));
+                    fs = new FileStream(DosyaAdi, FileMode.OpenOrCreate);
+                    writer = new StreamWriter(fs, Encoding.UTF8);
+                    serializer.Serialize(writer, mesaj_guncelle);
+                    fs.Flush();
+                    fs.Close();
+                    break;
+
+                case MesajTuru.Iptal:
+                    break;
+
+                case MesajTuru.Sorgulama:
+                    serializer = new XmlSerializer(typeof(QUQI_IN000001TR01Message));
+                    fs = new FileStream(DosyaAdi, FileMode.OpenOrCreate);
+                    writer = new StreamWriter(fs, Encoding.UTF8);
+                    serializer.Serialize(writer, mesaj_sorgu);
+                    fs.Flush();
+                    fs.Close();
+                    break;
+
+                default:
+                    break;
+            }
+
         }
-        
-        public string XMLString(){
-            return null;
+
+        public string XMLString()
+        {
+            XmlSerializer serializer = null;
+            MemoryStream ms = new MemoryStream();
+            StreamReader sr = null;
+
+            switch (SonMesajTuru)
+            {
+                case MesajTuru.Yok:
+                    break;
+
+                case MesajTuru.Yenikayit:
+                    serializer = new XmlSerializer(typeof(MCCI_IN000001TR01Message));
+                    serializer.Serialize(ms, mesaj_yeni);
+                    ms.Position = 0;
+                    sr = new StreamReader(ms);
+                    break;
+
+                case MesajTuru.Guncelle:
+                    serializer = new XmlSerializer(typeof(MCCI_IN000003TR01Message));
+                    serializer.Serialize(ms, mesaj_yeni);
+                    ms.Position = 0;
+                    sr = new StreamReader(ms);
+
+                    break;
+
+                case MesajTuru.Iptal:
+                    break;
+
+                case MesajTuru.Sorgulama:
+                    serializer = new XmlSerializer(typeof(QUQI_IN000001TR01Message));
+                    serializer.Serialize(ms, mesaj_yeni);
+                    ms.Position = 0;
+                    sr = new StreamReader(ms);
+
+                    break;
+
+                default:
+                    break;
+            }
+
+            return sr.ReadToEnd();
+
         }
+
         
 
     }
