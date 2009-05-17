@@ -11,7 +11,7 @@ using SaglikNetLib.WebReference_Muayene;
 
 namespace SaglikNetLib.Mesajlar
 {
-    class MuayeneMesaji :BaseMesaj,IMesaj   
+    public class MuayeneMesaji :BaseMesaj,IMesaj   
     {
         MCCI_AR000001TR_ServiceWse ws;
         MCCI_IN000001TR01Message mesaj_yeni;
@@ -20,13 +20,13 @@ namespace SaglikNetLib.Mesajlar
         QUQI_IN000001TR01Message mesaj_sorgu;
         QUQI_IN000002TR01Message mesaj_sorgu_cevap;
 
-        VatandasYabanciHastaKayitMSVS VatandasYabanciKayit;
-        List<TetkikSonucuMSVS> TetkikSonuclari;
-        List<ReceteMSVS> Recete;
-        HastaKabulMSVS HastaKabul;
-        YenidoganKayitMSVS YenidoganKayit;
-        HastaCikisMSVS HastaCikis;
-        MuayeneMSVS Muayene;
+        public VatandasYabanciHastaKayitMSVS VatandasYabanciKayit;
+        public List<TetkikSonucuMSVS> TetkikSonuclari;
+        public List<ReceteMSVS> Recete;
+        public HastaKabulMSVS HastaKabul;
+        public YenidoganKayitMSVS YenidoganKayit;
+        public HastaCikisMSVS HastaCikis;
+        public MuayeneMSVS Muayene;
 
         public MuayeneMesaji()
         {            
