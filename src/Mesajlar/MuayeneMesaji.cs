@@ -29,9 +29,7 @@ namespace SaglikNetLib.Mesajlar
         MuayeneMSVS Muayene;
 
         public MuayeneMesaji()
-        {
-            ws = new MCCI_AR000001TR_ServiceWse();
-
+        {            
             VatandasYabanciKayit = new VatandasYabanciHastaKayitMSVS();
             TetkikSonuclari = new List<TetkikSonucuMSVS>();
             Recete = new List<ReceteMSVS>();
@@ -1216,7 +1214,8 @@ namespace SaglikNetLib.Mesajlar
         public void Gonder()
         {
             UsernameToken token = new UsernameToken(ServiceUsername, ServicePassword, PasswordOption.SendPlainText);
-            MCCI_AR000001TR_ServiceWse ws = new MCCI_AR000001TR_ServiceWse();
+           
+            ws = new MCCI_AR000001TR_ServiceWse();
             ws.Url = ServiceURL;
             ws.RequestSoapContext.Security.Tokens.Add(token);
             ws.RequestSoapContext.Security.MustUnderstand = false;
