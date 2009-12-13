@@ -1,0 +1,2357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:hl7-org:v3" elementFormDefault="qualified" targetNamespace="urn:hl7-org:v3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="../coreschemas/infrastructureRoot.xsd" />
+  <xs:include schemaLocation="../coreschemas/NarrativeBlock.xsd" />
+  <xs:include schemaLocation="../coreschemas/USBSVoc.xsd" />
+  <xs:complexType name="POCD_MT000206TR01.AssignedAuthor">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.1.1" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st-tckimlik" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ASSIGNED" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.AssignedCustodian">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="representedHealthcareOrganization" type="POCD_MT000206TR01.HealthcareOrganization" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ASSIGNED" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.AssignedDoctor">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="2" maxOccurs="2" name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ASSIGNED" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Author1">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="time">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="TS">
+              <xs:attribute name="value" type="ts" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="assignedAuthor" type="POCD_MT000206TR01.AssignedAuthor" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="AUT" name="typeCode" type="ParticipationType" use="optional" />
+    <xs:attribute fixed="OP" name="contextControlCode" type="ContextControl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Author2">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="assignedDoctor" type="POCD_MT000206TR01.AssignedDoctor" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="AUT" name="typeCode" type="ParticipationType" use="optional" />
+    <xs:attribute fixed="OP" name="contextControlCode" type="ContextControl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Author3">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="testDoctor" type="POCD_MT000206TR01.TestDoctor" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="AUT" name="typeCode" type="ParticipationType" use="optional" />
+    <xs:attribute fixed="OP" name="contextControlCode" type="ContextControl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Author4">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="time">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="TS">
+              <xs:attribute name="value" type="ts" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="doctor" type="POCD_MT000206TR01.Doctor" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="AUT" name="typeCode" type="ParticipationType" use="optional" />
+    <xs:attribute fixed="OP" name="contextControlCode" type="ContextControl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Baby">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="administrativeGenderCode">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.21" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Cinsiyet" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="birthTime">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="TS">
+              <xs:attribute name="value" type="ts" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="multipleBirthOrderNumber" type="INT" />
+      <xs:element name="guardian" type="POCD_MT000206TR01.Guardian" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="PSN" name="classCode" type="EntityClass" use="optional" />
+    <xs:attribute fixed="INSTANCE" name="determinerCode" type="EntityDeterminer" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.BabyPatientRole">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="patientBaby" type="POCD_MT000206TR01.Baby" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="PAT" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.CaseType">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.53" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Vaka Türü" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ACT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.CaseTypeSection">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.5" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="VAKATURU" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veri Kısmı" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Vaka Türü Bilgisinin Olduğu Bölüm" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element name="component" type="POCD_MT000206TR01.Component46" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Clinic">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.1" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Klinikler" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="SDLOC" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component1">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="structuredBody" type="POCD_MT000206TR01.StructuredBody" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component10">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="presDiagnosis" type="POCD_MT000206TR01.PresDiagnosis" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component11">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="medicationSection" type="POCD_MT000206TR01.MedicationSection" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component12">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="substanceAdministration" type="POCD_MT000206TR01.SubstanceAdministration" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component13">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="supply" type="POCD_MT000206TR01.Supply" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component14">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="prescriptionHeaderSection" type="POCD_MT000206TR01.PrescriptionHeaderSection" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component15">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="prescriptionHeader" type="POCD_MT000206TR01.PrescriptionHeader" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component16">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="protocolNo" type="POCD_MT000206TR01.ProtocolNo" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component17">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="sGKRationBook" type="POCD_MT000206TR01.SGKRationBook" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component18">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="testResultDataset" type="POCD_MT000206TR01.TestResultDataset" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component19">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="testResultSection" type="POCD_MT000206TR01.TestResultSection" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component2">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="dischargeDataset" type="POCD_MT000206TR01.DischargeDataset" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component20">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="testResultOrganizer" type="POCD_MT000206TR01.TestResultOrganizer" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component21">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="testResult" type="POCD_MT000206TR01.TestResult" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component22">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="mouthTeethHealthDataset" type="POCD_MT000206TR01.MouthTeethHealthDataset" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component23">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="examProtocolNoSection" type="POCD_MT000206TR01.ExamProtocolNoSection" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component24">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="examProtocolNo" type="POCD_MT000206TR01.ExamProtocolNo" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component25">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="testSection" type="POCD_MT000206TR01.TestSection" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component26">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="procedureSection" type="POCD_MT000206TR01.ProcedureSection" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component27">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="curedTeethSection" type="POCD_MT000206TR01.CuredTeethSection" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component28">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="examinationSection" type="POCD_MT000206TR01.ExaminationSection" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component3">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="dischargeDiagnosisSection" type="POCD_MT000206TR01.DischargeDiagnosisSection" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component38">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="receptionDataset" type="POCD_MT000206TR01.ReceptionDataset" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component39">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="socialSecurityFollowNumberSection" type="POCD_MT000206TR01.SocialSecurityFollowNumberSection" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component4">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="dischargeDiagnosis" type="POCD_MT000206TR01.DischargeDiagnosis" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component40">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="referralSection" type="POCD_MT000206TR01.ReferralSection" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component41">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="referral" type="POCD_MT000206TR01.Referral" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component42">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="referralDiagnosis" type="POCD_MT000206TR01.ReferralDiagnosis" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component43">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="registrationSection" type="POCD_MT000206TR01.RegistrationSection" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component44">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="registration" type="POCD_MT000206TR01.Registration" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component45">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="caseTypeSection" type="POCD_MT000206TR01.CaseTypeSection" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component46">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="caseType" type="POCD_MT000206TR01.CaseType" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component5">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="dischargeSection" type="POCD_MT000206TR01.DischargeSection" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component6">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="discharge" type="POCD_MT000206TR01.Discharge" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component7">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="prescriptionDataset" type="POCD_MT000206TR01.PrescriptionDataset" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component8">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="guarantorSection" type="POCD_MT000206TR01.GuarantorSection" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component9">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="presDiagnosisSection" type="POCD_MT000206TR01.PresDiagnosisSection" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Consumable">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="manufacturedProduct" type="POCD_MT000206TR01.ManufacturedProduct" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="CSM" name="typeCode" type="ParticipationType" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.CuredTeethSection">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.5" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="DIS" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veri Kısmı" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Tedavi Edilen Diş Bilgilerinin Olduğu Bölüm" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element maxOccurs="unbounded" name="component" type="POCD_MT000206TR01.Component50" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Custodian">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="assignedCustodian" type="POCD_MT000206TR01.AssignedCustodian" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="CST" name="typeCode" type="ParticipationType" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Destination">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="referralToClinic" type="POCD_MT000206TR01.ReferralToClinic" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DST" name="typeCode" type="ParticipationType" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Discharge">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.9" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Çıkış Şekli" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="effectiveTime">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="TS">
+              <xs:attribute name="value" type="ts" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="destination" type="POCD_MT000206TR01.Destination" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ACT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.DischargeDataset">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.4" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="CIKIS" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.2" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veriseti" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Çıkış Veriseti" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element name="component1" type="POCD_MT000206TR01.Component5" />
+      <xs:element minOccurs="0" name="component2" type="POCD_MT000206TR01.Component3" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.DischargeDiagnosis">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="SEVKTANISI" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.6" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Tanı Tipi" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Sevk Tanısı" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="value">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.6.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="ICD-10" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="OBS" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.DischargeDiagnosisSection">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.5" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="TANI" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veri Kısmı" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Tanı Verisinin Olduğu Bölüm" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element maxOccurs="unbounded" name="component" type="POCD_MT000206TR01.Component4" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.DischargeSection">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.5" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="CIKIS" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veri Kısmı" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Çıkış Verisinin Olduğu Bölüm" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element name="component" type="POCD_MT000206TR01.Component6" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Doctor">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.1.1" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st-tckimlik" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ROL" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Encounter">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="effectiveTime" type="IVL_TS" />
+      <xs:element name="location" type="POCD_MT000206TR01.Location" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ENC" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component47">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="guarantor" type="POCD_MT000206TR01.Guarantor" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component48">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="test" type="POCD_MT000206TR01.Test" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component49">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="procedure" type="POCD_MT000206TR01.Procedure" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component50">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="tooth" type="POCD_MT000206TR01.Tooth" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Component51">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="encounter" type="POCD_MT000206TR01.Encounter" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="COMP" name="typeCode" type="ActRelationshipType" use="optional" />
+    <xs:attribute fixed="true" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.ExamProtocolNo">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.1.4" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ACT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.ExamProtocolNoSection">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.5" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="PROTOKOLNO" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veri Kısmı" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Protokol No Bilgisinin Olduğu Bölüm" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element name="component" type="POCD_MT000206TR01.Component24" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.ExaminationSection">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.5" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="MUAYENE" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veri Kısmı" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Muayene Verisinin Olduğu Bölüm" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element name="component" type="POCD_MT000206TR01.Component51" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Guarantor">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.11" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Sosyal Güvenlik" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ACT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.GuarantorSection">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.5" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="SOSYALGUVENCEDURUMU" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veri Kısmı" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Sosyal Güvence Durumu Bilgilerinin Olduğu Bölüm" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element name="component" type="POCD_MT000206TR01.Component47" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Guardian">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="MTH" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.5.111" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="RoleCode" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Mother" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="guardianMother" type="POCD_MT000206TR01.Mother" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="GUARD" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.HealthcareOrganization">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.1.6" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ENT" name="classCode" type="EntityClass" use="optional" />
+    <xs:attribute fixed="INSTANCE" name="determinerCode" type="EntityDeterminer" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Location">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="clinic" type="POCD_MT000206TR01.Clinic" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="LOC" name="typeCode" type="ParticipationType" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.ManufacturedMaterial">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="İlaçlar" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="MMAT" name="classCode" type="EntityClass" use="optional" />
+    <xs:attribute fixed="KIND" name="determinerCode" type="EntityDeterminer" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.ManufacturedProduct">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="manufacturedMaterial" type="POCD_MT000206TR01.ManufacturedMaterial" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="MANU" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.MedicationSection">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.5" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="ILAC" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veri Kısmı" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="İlaç Verisinin Olduğu Bölüm" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element maxOccurs="unbounded" name="component" type="POCD_MT000206TR01.Component12" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.MinisteryOfHealth">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.1.6" name="root" type="uid" use="required" />
+              <xs:attribute fixed="5881" name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ORG" name="classCode" type="EntityClass" use="optional" />
+    <xs:attribute fixed="INSTANCE" name="determinerCode" type="EntityDeterminer" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Mother">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.1.1" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st-tckimlik" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="PSN" name="classCode" type="EntityClass" use="optional" />
+    <xs:attribute fixed="INSTANCE" name="determinerCode" type="EntityDeterminer" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.MouthTeethHealth">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.3" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="USBS_DokumanTipi_code" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.1" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Döküman Tipi" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="USBS_DokumanTipi_displayName" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="effectiveTime">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="TS">
+              <xs:attribute name="value" type="ts" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="confidentialityCode">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.77" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Gizlilik" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="languageCode">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="tr-TR" name="code" type="cs" use="required" />
+              <xs:attribute name="codeSystem" type="uid" use="prohibited" />
+              <xs:attribute name="codeSystemName" type="st" use="prohibited" />
+              <xs:attribute name="codeSystemVersion" type="st" use="prohibited" />
+              <xs:attribute name="displayName" type="st" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="versionNumber">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="INT">
+              <xs:attribute fixed="1" name="value" type="int" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="recordTarget" type="POCD_MT000206TR01.RecordTarget" />
+      <xs:element name="author" type="POCD_MT000206TR01.Author1" />
+      <xs:element name="custodian" type="POCD_MT000206TR01.Custodian" />
+      <xs:element name="primaryInformationRecipient" type="POCD_MT000206TR01.PrimaryInformationRecipient" />
+      <xs:element minOccurs="1" maxOccurs="1" name="replacementOf" type="POCD_MT000206TR01.ReplacementOf" />
+      <xs:element name="component" type="POCD_MT000206TR01.Component1" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCCLIN" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.MouthTeethHealthDataset">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.4" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="AGIZDIS" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.2" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veriseti" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Ağız-Diş Veriseti" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element name="author" type="POCD_MT000206TR01.Author4" />
+      <xs:element name="component1" type="POCD_MT000206TR01.Component23" />
+      <xs:element minOccurs="0" name="component2" type="POCD_MT000206TR01.Component25" />
+      <xs:element minOccurs="0" name="component3" type="POCD_MT000206TR01.Component27" />
+      <xs:element name="component4" type="POCD_MT000206TR01.Component26" />
+      <xs:element name="component5" type="POCD_MT000206TR01.Component28" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.ParentDocument">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.3" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="USBS_DokumanTipi_code" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.1" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Döküman Tipi" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="USBS_DokumanTipi_displayName" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="versionNumber" type="INT" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCCLIN" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Patient">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="name">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="PN">
+              <xs:sequence>
+                <xs:choice minOccurs="2" maxOccurs="2">
+                  <xs:element minOccurs="1" maxOccurs="1" name="family" type="en.family" />
+                  <xs:element minOccurs="1" maxOccurs="1" name="given" type="en.given" />
+                </xs:choice>
+                <xs:element minOccurs="0" name="validTime" type="IVL_TS" />
+              </xs:sequence>
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="administrativeGenderCode">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.85" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Cinsiyet (Resmi)" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="birthTime">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="TS">
+              <xs:attribute name="value" type="ts" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="raceCode">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.52" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Uyruk" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="PSN" name="classCode" type="EntityClass" use="optional" />
+    <xs:attribute fixed="INSTANCE" name="determinerCode" type="EntityDeterminer" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.PatientRole">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.1.1" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st-tckimlik" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="patient" type="POCD_MT000206TR01.Patient" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="PAT" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Performer1">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="studyOrganization" type="POCD_MT000206TR01.StudyOrganization" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="PRF" name="typeCode" type="ParticipationType" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Performer2">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="performerOrganization" type="POCD_MT000206TR01.PerformerOrganization" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="PRF" name="typeCode" type="ParticipationType" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.PerformerOrganization">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.1.6" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ASSIGNED" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.PresDiagnosis">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="USBS_TaniTipi_code" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.6" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Tanı Tipi" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="USBS_TaniTipi_displayName" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="value">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.6.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="ICD-10" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="OBS" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.PresDiagnosisSection">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.5" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="TANI" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veri Kısmı" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Tanı Verisinin Olduğu Bölüm" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element maxOccurs="unbounded" name="component" type="POCD_MT000206TR01.Component10" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.PrescriptionDataset">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.4" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="RECETE" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.2" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veriseti" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Reçete Veriseti" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element name="author" type="POCD_MT000206TR01.Author2" />
+      <xs:element name="component1" type="POCD_MT000206TR01.Component14" />
+      <xs:element name="component2" type="POCD_MT000206TR01.Component11" />
+      <xs:element name="component3" type="POCD_MT000206TR01.Component9" />
+      <xs:element name="component4" type="POCD_MT000206TR01.Component8" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.PrescriptionHeader">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.48" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Reçete Türü" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="effectiveTime">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="TS">
+              <xs:attribute name="value" type="ts" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="component1" type="POCD_MT000206TR01.Component17" />
+      <xs:element name="component2" type="POCD_MT000206TR01.Component16" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ACT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.PrescriptionHeaderSection">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.5" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="RECETEBASLIK" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veri Kısmı" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Reçete Başlık Bilgisinin Olduğu Bölüm" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element name="component" type="POCD_MT000206TR01.Component15" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.PrimaryInformationRecipient">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="recipient" type="POCD_MT000206TR01.Recipient" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="PRCP" name="typeCode" type="ParticipationType" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Procedure">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.2" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="SUT" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="PROC" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.ProcedureSection">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.5" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="MUDAHALE" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veri Kısmı" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Müdehale Verisinin Olduğu Bölüm" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element maxOccurs="unbounded" name="component" type="POCD_MT000206TR01.Component49" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.ProtocolNo">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.1.4" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ACT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.ReceptionDataset">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.4" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="KABUL" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.2" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veriseti" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Kabul Veriseti" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element name="component1" type="POCD_MT000206TR01.Component43" />
+      <xs:element minOccurs="0" name="component2" type="POCD_MT000206TR01.Component40" />
+      <xs:element name="component3" type="POCD_MT000206TR01.Component45" />
+      <xs:element minOccurs="0" name="component4" type="POCD_MT000206TR01.Component39" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Recipient">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="representedMinisteryOfHealth" type="POCD_MT000206TR01.MinisteryOfHealth" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ASSIGNED" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.RecordTarget">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:choice>
+        <xs:element name="babyPatientRole" type="POCD_MT000206TR01.BabyPatientRole" />
+        <xs:element name="patientRole" type="POCD_MT000206TR01.PatientRole" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="RCT" name="typeCode" type="ParticipationType" use="optional" />
+    <xs:attribute fixed="OP" name="contextControlCode" type="ContextControl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Referral">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="effectiveTime">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="TS">
+              <xs:attribute name="value" type="ts" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="referrer" type="POCD_MT000206TR01.Referrer" />
+      <xs:element maxOccurs="unbounded" name="component" type="POCD_MT000206TR01.Component42" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ACT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.ReferralDiagnosis">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="SEVKTANISI" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.6" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Tanı Tipi" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Sevk Tanısı" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="value">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.6.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="ICD-10" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="OBS" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.ReferralFromClinic">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.1" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Klinikler" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="SDLOC" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.ReferralSection">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.5" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="SEVK" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veri Kısmı" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Sevk Verisinin Olduğu Bölüm" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element name="component" type="POCD_MT000206TR01.Component41" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.ReferralToClinic">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.1" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Klinikler" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="SDLOC" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Referrer">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="referralFromClinic" type="POCD_MT000206TR01.ReferralFromClinic" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="REF" name="typeCode" type="ParticipationType" use="optional" />
+    <xs:attribute fixed="OP" name="contextControlCode" type="ContextControl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Registration">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.7" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Kabul Şekli" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="effectiveTime">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="TS">
+              <xs:attribute name="value" type="ts" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ACT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.RegistrationSection">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.5" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="KABUL" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veri Kısmı" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Kabul Verisinin Olduğu Bölüm" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element name="component" type="POCD_MT000206TR01.Component44" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.ReplacementOf">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="parentDocument" type="POCD_MT000206TR01.ParentDocument" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="RPLC" name="typeCode" type="ActRelationshipType" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.SGKRationBook">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.1.3" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ACT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.SocialSecurityFollowNumberSection">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.5" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="SGKTAKIPNO" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veri Kısmı" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="SGK Takip No Bilgisinin Olduğu Bölüm" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.StructuredBody">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="component1" type="POCD_MT000206TR01.Component38" />
+      <xs:element name="component2" type="POCD_MT000206TR01.Component22" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="component3" type="POCD_MT000206TR01.Component18" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="component4" type="POCD_MT000206TR01.Component7" />
+      <xs:element name="component5" type="POCD_MT000206TR01.Component2" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCBODY" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.StudyOrganization">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.1.6" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ASSIGNED" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.SubstanceAdministration">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="effectiveTime">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="PIVL_TS">
+              <xs:sequence>
+                <xs:element name="period">
+                  <xs:complexType>
+                    <xs:complexContent mixed="false">
+                      <xs:restriction base="PQ">
+                        <xs:attribute name="value" type="real" use="required" />
+                        <xs:attribute name="unit" type="cs" use="required" />
+                      </xs:restriction>
+                    </xs:complexContent>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="routeCode">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.47" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="İlaç Kullanım Şekli" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="doseQuantity" type="REAL" />
+      <xs:element name="consumable" type="POCD_MT000206TR01.Consumable" />
+      <xs:element name="component" type="POCD_MT000206TR01.Component13" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="SBADM" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="RQO" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Supply">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="quantity" type="INT" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="SPLY" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="INT" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Test">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.2" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="SUT" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="performer" type="POCD_MT000206TR01.Performer2" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ACT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.TestDoctor">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.1.1" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st-tckimlik" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ASSIGNED" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.TestResult">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.2" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="SUT" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="activityTime">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="TS">
+              <xs:attribute name="value" type="ts" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="OBS" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.TestResultDataset">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.4" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="TETKIKSONUCU" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.2" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veriseti" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Tetkik Sonucu Veriseti" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element name="author" type="POCD_MT000206TR01.Author3" />
+      <xs:element name="component" type="POCD_MT000206TR01.Component19" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.TestResultOrganizer">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="statusCode">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CS">
+              <xs:attribute fixed="completed" name="code" type="cs" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="performer" type="POCD_MT000206TR01.Performer1" />
+      <xs:element maxOccurs="unbounded" name="component" type="POCD_MT000206TR01.Component21" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="CLUSTER" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.TestResultSection">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.5" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="TETKIKSONUC" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veri Kısmı" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Tetkik Sonuç Verisinin Olduğu Bölüm" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element name="component" type="POCD_MT000206TR01.Component20" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.TestSection">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.1.5" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="TETKIK" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.2.2.3" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Veri Kısmı" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Tetkik Verisinin Olduğu Bölüm" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="text" type="StrucDoc.Text" />
+      <xs:element maxOccurs="unbounded" name="component" type="POCD_MT000206TR01.Component48" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="DOCSECT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="POCD_MT000206TR01.Tooth">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.20" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Diş Kodu" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="ACT" name="classCode" type="ActClass" use="optional" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+</xs:schema>

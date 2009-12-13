@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaglikNetLib", "SaglikNetLib.csproj", "{F7C40142-0223-4D2C-B9FB-E15DAB6D2954}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "..\Test\Test.csproj", "{26ACF257-6CE8-44AC-9BDE-CC1AB7547CEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7C40142-0223-4D2C-B9FB-E15DAB6D2954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7C40142-0223-4D2C-B9FB-E15DAB6D2954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7C40142-0223-4D2C-B9FB-E15DAB6D2954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7C40142-0223-4D2C-B9FB-E15DAB6D2954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26ACF257-6CE8-44AC-9BDE-CC1AB7547CEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26ACF257-6CE8-44AC-9BDE-CC1AB7547CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26ACF257-6CE8-44AC-9BDE-CC1AB7547CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26ACF257-6CE8-44AC-9BDE-CC1AB7547CEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

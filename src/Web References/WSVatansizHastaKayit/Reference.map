@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/Vatansız Hasta Kayıt/MCCI_AR000001TR01.wsdl" filename="MCCI_AR000001TR.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/Vatansız Hasta Kayıt/MCCI_IN000003TR01.xsd" filename="MCCI_IN000003TR01.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/coreschemas/NarrativeBlock.xsd" filename="NarrativeBlock.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/coreschemas/voc.xsd" filename="voc.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/Vatansız Hasta Kayıt/POCD_MT000003TR01.xsd" filename="POCD_MT000003TR01.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/coreschemas/infrastructureRoot.xsd" filename="infrastructureRoot.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/Vatansız Hasta Kayıt/MCCI_IN000002TR01.xsd" filename="MCCI_IN000002TR01.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/coreschemas/datatypes-base.xsd" filename="datatypes-base.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/Vatansız Hasta Kayıt/QUQI_IN000002TR01.xsd" filename="QUQI_IN000002TR01.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/coreschemas/datatypes.xsd" filename="datatypes.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/Vatansız Hasta Kayıt/QUQI_IN000001TR01.xsd" filename="QUQI_IN000001TR01.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/Vatansız Hasta Kayıt/POCD_MT000203TR01.xsd" filename="POCD_MT000203TR01.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/coreschemas/USBSVoc.xsd" filename="USBSVoc.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/Vatansız Hasta Kayıt/MCCI_IN000001TR01.xsd" filename="MCCI_IN000001TR01.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

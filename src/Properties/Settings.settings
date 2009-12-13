@@ -1,0 +1,81 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SaglikNetLib.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SaglikNetLib_WSVatandasYabanciHastaKayit_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/VatandasYabanciKayit/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSMuayene_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/Muayene/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WS1549YasKadinIzlem_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/KadinIzlem/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSAgizVeDisSagligi_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/AgizveDisSagligi/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSAsi_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/Asi/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSBebekCocukBeslenme_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/BebekCocukBeslenme/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSBebekCocukIzlem_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/BebekCocukIzlem/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSBebekCocukPsikososyalIzlem_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/BebekCocukPsikososyalIzlem/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSBulasiciHastalikKesinVakaBildirimi_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://wws.sagliknet.saglik.gov.tr/BulasiciHastalikKesinVakaBildirimi/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSBulasıcıHastalikOlasiVakaBildirimi_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/BulasiciHastalikOlasiVakaBildirimi/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSDiyabet_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/Diyabet/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSDiyalizBildirim_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/DiyalizBildirim/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSDiyalizIzlem_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/DiyalizIzlem/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSDogumBildirim_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/DogumBildirim/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSGebeIzlem_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/GebeIzlem/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSGebePsikososyalIzlem_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/GebePsikososyalIzlem/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSGebelikSonucu_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/GebelikSonucu/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSHastaOzlukBilgileri_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/HastaOzlukBilgileri/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSKanser_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/Kanser/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSLohusaIzlem_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/LohusaIzlem/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSOlumBildirim_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/OlumBildirim/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSTetkikSonucu_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/TetkikSonucu/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSVatansizHastaKayit_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/VatansizKayit/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSYatanHasta_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/YatanHasta/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+    <Setting Name="SaglikNetLib_WSYenidoganHastaKayit_MCCI_AR000001TR_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.sagliknet.saglik.gov.tr/YenidoganKayit/services/MCCI_AR000001TR_Service</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
