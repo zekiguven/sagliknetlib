@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:hl7-org:v3" elementFormDefault="qualified" targetNamespace="urn:hl7-org:v3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="../coreschemas/infrastructureRoot.xsd" />
+  <xs:include schemaLocation="../coreschemas/USBSVoc.xsd" />
+  <xs:annotation>
+    <xs:documentation>Generated using schema builder version 3.1.0. Stylesheets:
+
+StaticMifToXsd.xsl version 2.0</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="COCT_MT000002TR01.Baby">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="administrativeGenderCode">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.2.21" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="Cinsiyet" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="birthTime">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="TS">
+              <xs:attribute name="value" type="ts" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="multipleBirthOrderNumber" type="INT" />
+      <xs:element minOccurs="1" maxOccurs="1" name="guardian" type="COCT_MT000002TR01.Guardian" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="PSN" name="classCode" type="EntityClass" use="optional" />
+    <xs:attribute fixed="INSTANCE" name="determinerCode" type="EntityDeterminer" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT000002TR01.BabyPatient">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="patientBaby" type="COCT_MT000002TR01.Baby" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="PAT" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT000002TR01.Guardian">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="code">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="CV">
+              <xs:attribute fixed="MTH" name="code" type="cs" use="required" />
+              <xs:attribute fixed="2.16.840.1.113883.5.111" name="codeSystem" type="uid" use="required" />
+              <xs:attribute fixed="RoleCode" name="codeSystemName" type="st" use="required" />
+              <xs:attribute fixed="1.0" name="codeSystemVersion" type="st" use="required" />
+              <xs:attribute fixed="Mother" name="displayName" type="st" use="required" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="guardianMother" type="COCT_MT000002TR01.Mother" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="GUARD" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT000002TR01.Mother">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="id">
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:restriction base="II">
+              <xs:attribute fixed="2.16.840.1.113883.3.129.1.1.1" name="root" type="uid" use="required" />
+              <xs:attribute name="extension" type="st-tckimlik" use="required" />
+              <xs:attribute name="nullFlavor" type="NullFlavor" use="prohibited" />
+              <xs:attribute name="assigningAuthorityName" type="st" use="prohibited" />
+              <xs:attribute name="displayable" type="bl" use="prohibited" />
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute fixed="PSN" name="classCode" type="EntityClass" use="optional" />
+    <xs:attribute fixed="INSTANCE" name="determinerCode" type="EntityDeterminer" use="optional" />
+  </xs:complexType>
+</xs:schema>

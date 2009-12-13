@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/Gebe İzlem/MCCI_AR000001TR01.wsdl" filename="MCCI_AR000001TR.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/Gebe İzlem/MCCI_IN000001TR01.xsd" filename="MCCI_IN000001TR01.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/Gebe İzlem/POCD_MT000208TR01.xsd" filename="POCD_MT000208TR01.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/CMET/COCT_MT000001TR01.xsd" filename="COCT_MT000001TR01.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/coreschemas/voc.xsd" filename="voc.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/Gebe İzlem/QUQI_IN000001TR01.xsd" filename="QUQI_IN000001TR01.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/Gebe İzlem/MCCI_IN000003TR01.xsd" filename="MCCI_IN000003TR01.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/coreschemas/NarrativeBlock.xsd" filename="NarrativeBlock.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/Gebe İzlem/POCD_MT000008TR01.xsd" filename="POCD_MT000008TR01.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/coreschemas/USBSVoc.xsd" filename="USBSVoc.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/coreschemas/infrastructureRoot.xsd" filename="infrastructureRoot.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/coreschemas/datatypes-base.xsd" filename="datatypes-base.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/CMET/COCT_MT000002TR01.xsd" filename="COCT_MT000002TR01.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/CMET/COCT_MT000003TR01.xsd" filename="COCT_MT000003TR01.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/Gebe İzlem/MCCI_IN000004TR01.xsd" filename="MCCI_IN000004TR01.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/Gebe İzlem/QUQI_IN000002TR01.xsd" filename="QUQI_IN000002TR01.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/Gebe İzlem/POCD_MT000401TR01.xsd" filename="POCD_MT000401TR01.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/coreschemas/datatypes.xsd" filename="datatypes.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///D:/SaglikNetLib/HL7_Mesajlari/MSVS/Gebe İzlem/MCCI_IN000002TR01.xsd" filename="MCCI_IN000002TR01.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

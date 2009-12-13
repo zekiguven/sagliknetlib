@@ -1,0 +1,2068 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F7C40142-0223-4D2C-B9FB-E15DAB6D2954}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SaglikNetLib</RootNamespace>
+    <AssemblyName>SaglikNetLib</AssemblyName>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Services3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mesajlar\AgizVeDisSagligiMesaji.cs" />
+    <Compile Include="Mesajlar\AsiMesaji.cs" />
+    <Compile Include="Mesajlar\BaseMesaj.cs" />
+    <Compile Include="Mesajlar\BebekCocukBeslenmeMesaji.cs" />
+    <Compile Include="Mesajlar\BebekCocukIzlemMesaji.cs" />
+    <Compile Include="Mesajlar\BebekCocukPsikososyalIzlemMesaji.cs" />
+    <Compile Include="Mesajlar\BulasiciHastalikKesinVakaBildirimiMesaji.cs" />
+    <Compile Include="Mesajlar\BulasiciHastalikOlasiVakaBildirimiMesaji.cs" />
+    <Compile Include="Mesajlar\DiyabetMesaji.cs" />
+    <Compile Include="Mesajlar\DiyalizHastasiBildirimMesaji.cs" />
+    <Compile Include="Mesajlar\DiyalizHastasiIzlemMesaji.cs" />
+    <Compile Include="Mesajlar\DogumBildirimMesaji.cs" />
+    <Compile Include="Mesajlar\GebeIzlemMesaji.cs" />
+    <Compile Include="Mesajlar\GebePsikososyalIzlemMesaji.cs" />
+    <Compile Include="Mesajlar\HastaOzlukBilgileriMesaji.cs" />
+    <Compile Include="Mesajlar\KanserMesaji.cs" />
+    <Compile Include="Mesajlar\LohusaIzlemMesaji.cs" />
+    <Compile Include="Mesajlar\MSVS.cs" />
+    <Compile Include="Mesajlar\MuayeneMesaji.cs" />
+    <Compile Include="MyPolicy.cs" />
+    <Compile Include="Mesajlar\ObjectCreateMethod.cs" />
+    <Compile Include="Mesajlar\OlumBildirimMesaji.cs" />
+    <Compile Include="Mesajlar\OnBesKirkDokuzYasKadinIzlemMesaji.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Mesajlar\TetkikSonucuMesaji.cs" />
+    <Compile Include="Mesajlar\VatandasYabanciHastaKayitMesaji.cs" />
+    <Compile Include="Mesajlar\VatansizKayitMesaji.cs" />
+    <Compile Include="Web References\WS1549YasKadinIzlem\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSAgizVeDisSagligi\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSAsi\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSBebekCocukBeslenme\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSBebekCocukIzlem\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSBebekCocukPsikososyalIzlem\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSDiyabet\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSDiyalizBildirim\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSDiyalizIzlem\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSDogumBildirim\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSGebeIzlem\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSGebelikSonucu\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSGebePsikososyalIzlem\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSHastaOzlukBilgileri\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSKanser\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSLohusaIzlem\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSMuayene\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSOlumBildirim\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSTetkikSonucu\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSVatandasYabanciHastaKayit\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSVatansizHastaKayit\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSYatanHasta\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSYenidoganHastaKayit\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WSSEDraftPolicyAssertion.cs" />
+    <Compile Include="Mesajlar\YatanHastaMesaji.cs" />
+    <Compile Include="Mesajlar\YeniDoganKayitMesaji.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WS1549YasKadinIzlem\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\POCD_MT000007TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\POCD_MT000207TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WS1549YasKadinIzlem\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSAgizVeDisSagligi\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\POCD_MT000006TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\POCD_MT000206TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAgizVeDisSagligi\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAsi\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAsi\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAsi\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAsi\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAsi\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAsi\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAsi\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSAsi\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAsi\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAsi\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSAsi\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAsi\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAsi\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAsi\POCD_MT000017TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAsi\POCD_MT000217TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAsi\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAsi\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAsi\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAsi\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSAsi\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSAsi\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSAsi\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukBeslenme\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukBeslenme\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukBeslenme\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukBeslenme\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSBebekCocukBeslenme\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukBeslenme\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukBeslenme\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSBebekCocukBeslenme\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukBeslenme\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukBeslenme\POCD_MT000014TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukBeslenme\POCD_MT000214TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukBeslenme\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukBeslenme\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukBeslenme\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSBebekCocukBeslenme\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSBebekCocukBeslenme\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukBeslenme\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSBebekCocukIzlem\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\POCD_MT000015TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\POCD_MT000215TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukIzlem\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\POCD_MT000016TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\POCD_MT000216TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBebekCocukPsikososyalIzlem\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\COCT_MT000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\COCT_MT000005TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\COCT_MT000006TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\POCD_MT000019TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\POCD_MT000219TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasiciHastalikKesinVakaBildirimi\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\COCT_MT000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\COCT_MT000005TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\COCT_MT000006TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\POCD_MT000018TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\POCD_MT000218TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSBulasıcıHastalikOlasiVakaBildirimi\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyabet\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyabet\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyabet\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyabet\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyabet\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyabet\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyabet\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSDiyabet\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyabet\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyabet\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSDiyabet\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyabet\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyabet\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyabet\POCD_MT000026TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyabet\POCD_MT000226TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyabet\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyabet\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyabet\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyabet\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSDiyabet\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSDiyabet\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyabet\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSDiyalizBildirim\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\POCD_MT000027TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\POCD_MT000227TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizBildirim\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSDiyalizIzlem\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\POCD_MT000028TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\POCD_MT000228TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDiyalizIzlem\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDogumBildirim\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDogumBildirim\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDogumBildirim\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDogumBildirim\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDogumBildirim\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDogumBildirim\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDogumBildirim\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSDogumBildirim\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDogumBildirim\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDogumBildirim\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSDogumBildirim\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDogumBildirim\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDogumBildirim\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDogumBildirim\POCD_MT000012TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDogumBildirim\POCD_MT000212TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDogumBildirim\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDogumBildirim\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDogumBildirim\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDogumBildirim\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSDogumBildirim\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSDogumBildirim\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSDogumBildirim\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebeIzlem\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebeIzlem\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebeIzlem\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebeIzlem\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebeIzlem\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebeIzlem\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebeIzlem\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSGebeIzlem\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebeIzlem\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebeIzlem\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSGebeIzlem\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebeIzlem\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebeIzlem\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebeIzlem\POCD_MT000008TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebeIzlem\POCD_MT000208TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebeIzlem\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebeIzlem\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebeIzlem\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebeIzlem\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSGebeIzlem\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSGebeIzlem\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebeIzlem\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSGebelikSonucu\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\POCD_MT000010TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\POCD_MT000210TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebelikSonucu\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSGebePsikososyalIzlem\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\POCD_MT000009TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\POCD_MT000209TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSGebePsikososyalIzlem\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSHastaOzlukBilgileri\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSHastaOzlukBilgileri\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSHastaOzlukBilgileri\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSHastaOzlukBilgileri\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSHastaOzlukBilgileri\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSHastaOzlukBilgileri\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSHastaOzlukBilgileri\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSHastaOzlukBilgileri\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSHastaOzlukBilgileri\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSHastaOzlukBilgileri\POCD_MT000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSHastaOzlukBilgileri\POCD_MT000204TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSHastaOzlukBilgileri\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSHastaOzlukBilgileri\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSHastaOzlukBilgileri\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSHastaOzlukBilgileri\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSHastaOzlukBilgileri\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSHastaOzlukBilgileri\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSKanser\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSKanser\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSKanser\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSKanser\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSKanser\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSKanser\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSKanser\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSKanser\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSKanser\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSKanser\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSKanser\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSKanser\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSKanser\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSKanser\POCD_MT000025TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSKanser\POCD_MT000225TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSKanser\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSKanser\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSKanser\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSKanser\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSKanser\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSKanser\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSKanser\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSLohusaIzlem\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\POCD_MT000011TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\POCD_MT000211TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSLohusaIzlem\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSMuayene\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSMuayene\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSMuayene\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSMuayene\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSMuayene\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSMuayene\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSMuayene\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSMuayene\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSMuayene\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSMuayene\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSMuayene\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSMuayene\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSMuayene\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSMuayene\POCD_MT000005TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSMuayene\POCD_MT000205TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSMuayene\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSMuayene\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSMuayene\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSMuayene\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSMuayene\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSMuayene\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSMuayene\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSOlumBildirim\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSOlumBildirim\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSOlumBildirim\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSOlumBildirim\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSOlumBildirim\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSOlumBildirim\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSOlumBildirim\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSOlumBildirim\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSOlumBildirim\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSOlumBildirim\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSOlumBildirim\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSOlumBildirim\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSOlumBildirim\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSOlumBildirim\POCD_MT000013TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSOlumBildirim\POCD_MT000213TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSOlumBildirim\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSOlumBildirim\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSOlumBildirim\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSOlumBildirim\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSOlumBildirim\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSOlumBildirim\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSOlumBildirim\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSTetkikSonucu\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\POCD_MT000040TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\POCD_MT000240TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSTetkikSonucu\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatandasYabanciHastaKayit\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatandasYabanciHastaKayit\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatandasYabanciHastaKayit\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatandasYabanciHastaKayit\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSVatandasYabanciHastaKayit\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatandasYabanciHastaKayit\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatandasYabanciHastaKayit\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSVatandasYabanciHastaKayit\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatandasYabanciHastaKayit\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatandasYabanciHastaKayit\POCD_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatandasYabanciHastaKayit\POCD_MT000201TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatandasYabanciHastaKayit\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatandasYabanciHastaKayit\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatandasYabanciHastaKayit\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSVatandasYabanciHastaKayit\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSVatandasYabanciHastaKayit\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatandasYabanciHastaKayit\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatansizHastaKayit\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatansizHastaKayit\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatansizHastaKayit\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatansizHastaKayit\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSVatansizHastaKayit\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatansizHastaKayit\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatansizHastaKayit\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSVatansizHastaKayit\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatansizHastaKayit\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatansizHastaKayit\POCD_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatansizHastaKayit\POCD_MT000203TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatansizHastaKayit\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatansizHastaKayit\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatansizHastaKayit\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSVatansizHastaKayit\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSVatansizHastaKayit\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSVatansizHastaKayit\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYatanHasta\COCT_MT000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYatanHasta\COCT_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYatanHasta\COCT_MT000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYatanHasta\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYatanHasta\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYatanHasta\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYatanHasta\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSYatanHasta\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYatanHasta\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYatanHasta\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSYatanHasta\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYatanHasta\MCCI_IN000004TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYatanHasta\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYatanHasta\POCD_MT000042TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYatanHasta\POCD_MT000242TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYatanHasta\POCD_MT000401TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYatanHasta\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYatanHasta\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYatanHasta\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSYatanHasta\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSYatanHasta\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYatanHasta\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYenidoganHastaKayit\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYenidoganHastaKayit\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYenidoganHastaKayit\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYenidoganHastaKayit\MCCI_AR000001TR.wsdl" />
+    <None Include="Web References\WSYenidoganHastaKayit\MCCI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYenidoganHastaKayit\MCCI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYenidoganHastaKayit\MCCI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSYenidoganHastaKayit\MCCI_IN000003TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYenidoganHastaKayit\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYenidoganHastaKayit\POCD_MT000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYenidoganHastaKayit\POCD_MT000202TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYenidoganHastaKayit\QUQI_IN000001TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYenidoganHastaKayit\QUQI_IN000002TR01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYenidoganHastaKayit\QUQI_IN000002TR01Message1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSYenidoganHastaKayit\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSYenidoganHastaKayit\USBSVoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WSYenidoganHastaKayit\voc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="wse3policyCache.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\15-49 yaş Kadın İzlem\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS1549YasKadinIzlem\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\15-49 yaş Kadın İzlem\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WS1549YasKadinIzlem_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Ağız ve Diş Sağlığı\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSAgizVeDisSagligi\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Ağız ve Diş Sağlığı\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSAgizVeDisSagligi_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Aşı\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSAsi\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Aşı\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSAsi_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Bebek,Çocuk Beslenme\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSBebekCocukBeslenme\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Bebek,Çocuk Beslenme\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSBebekCocukBeslenme_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Bebek,Çocuk Psikososyal İzlem\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSBebekCocukPsikososyalIzlem\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Bebek,Çocuk Psikososyal İzlem\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSBebekCocukPsikososyalIzlem_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Bebek,Çocuk İzlem\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSBebekCocukIzlem\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Bebek,Çocuk İzlem\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSBebekCocukIzlem_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Bulaşıcı Hastalık Kesin Vaka Bildirimi\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSBulasiciHastalikKesinVakaBildirimi\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Bulaşıcı Hastalık Kesin Vaka Bildirimi\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSBulasiciHastalikKesinVakaBildirimi_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Bulaşıcı Hastalık Olası Vaka Bildirimi\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSBulasıcıHastalikOlasiVakaBildirimi\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Bulaşıcı Hastalık Olası Vaka Bildirimi\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSBulasıcıHastalikOlasiVakaBildirimi_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Diyabet\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSDiyabet\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Diyabet\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSDiyabet_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Diyaliz Bildirim\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSDiyalizBildirim\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Diyaliz Bildirim\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSDiyalizBildirim_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Diyaliz İzlem\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSDiyalizIzlem\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Diyaliz İzlem\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSDiyalizIzlem_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Doğum Bildirim\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSDogumBildirim\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Doğum Bildirim\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSDogumBildirim_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Gebe Psikososyal İzlem\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSGebePsikososyalIzlem\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Gebe Psikososyal İzlem\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSGebePsikososyalIzlem_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Gebe İzlem\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSGebeIzlem\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Gebe İzlem\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSGebeIzlem_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Gebelik Sonucu\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSGebelikSonucu\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Gebelik Sonucu\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSGebelikSonucu_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Hasta Özlük Bilgileri\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSHastaOzlukBilgileri\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Hasta Özlük Bilgileri\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSHastaOzlukBilgileri_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Kanser\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSKanser\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Kanser\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSKanser_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Lohusa İzlem\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSLohusaIzlem\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Lohusa İzlem\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSLohusaIzlem_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Muayene\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSMuayene\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Muayene\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSMuayene_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Tetkik Sonucu\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSTetkikSonucu\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Tetkik Sonucu\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSTetkikSonucu_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Vatandaş,Yabancı Hasta Kayıt\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSVatandasYabanciHastaKayit\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Vatandaş,Yabancı Hasta Kayıt\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSVatandasYabanciHastaKayit_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Vatansız Hasta Kayıt\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSVatansizHastaKayit\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Vatansız Hasta Kayıt\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSVatansizHastaKayit_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Yatan Hasta\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSYatanHasta\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Yatan Hasta\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSYatanHasta_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Yenidoğan Hasta Kayıt\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSYenidoganHastaKayit\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Yenidoğan Hasta Kayıt\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSYenidoganHastaKayit_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="D:\sagliknetlib\HL7_Mesajlari\MSVS\Ölüm Bildirim\MCCI_AR000001TR01.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSOlumBildirim\</RelPath>
+      <UpdateFromURL>D:\sagliknetlib\HL7_Mesajlari\MSVS\Ölüm Bildirim\MCCI_AR000001TR01.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>sagliknetlib_WSOlumBildirim_MCCI_AR000001TR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
