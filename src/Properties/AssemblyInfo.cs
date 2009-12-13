@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("SaglikNetLib")]
 [assembly: AssemblyDescription("SaglikNet entegrasyon kutuphanesi")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("A")]
+[assembly: AssemblyCompany("Zeki Güven")]
 [assembly: AssemblyProduct("SaglikNetLib")]
-[assembly: AssemblyCopyright("Copyright © A 2008")]
+[assembly: AssemblyCopyright("Copyright © Zeki Güven 2008")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
